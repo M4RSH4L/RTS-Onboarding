@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding Rocket Tech school</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Onboarding</h1>
+        <p>Aquí encontrarás toda la información esencial para empezar.</p>
+        <div class="video-grid" id="videoContainer"></div>
+
+          </div>
+
+    <script>
+        const videos = [
+            { url: "https://www.youtube.com/embed/g7Kyh34urVM?si=265Gztl4dLBa4a_s", descripcion: "Presentacion institucional" },
+            { url: "https://www.youtube.com/embed/NU3LFb3dfeQ?si=xNo6IkygJzSLa7r7", descripcion: "Practica de Scratch" },
+            { url: "https://www.youtube.com/embed/p5s2KlCTJxY?si=EdEPXxrDsXuggHbD", descripcion: "Practica de Python" }
+        ];
+        
+        const videoContainer = document.getElementById("videoContainer");
+        
+        videos.forEach(video => {
+            const videoCard = document.createElement("div");
+            videoCard.classList.add("video-card");
+            videoCard.innerHTML = `
+                <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
+                <p>${video.descripcion}</p>
+            `;
+            videoContainer.appendChild(videoCard);
+        });
+    </script>
+</body>
+</html>
