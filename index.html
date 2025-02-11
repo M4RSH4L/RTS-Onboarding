@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,30 @@
     
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido al Onboarding</h1>
+  
+    
+    <div class="container"  id="welcome">
+        <h1>Bienvenido al Onboarding de RTS</h1>
         <p>Aquí encontrarás toda la información esencial para empezar.</p>
-        <div class="video-grid" id="videoContainer"></div>
 
+
+        <section>
+            <h1>Bienvenida</h1>
+            <iframe src="https://www.youtube.com/embed/TnRZhLRv6eM?si=pJkurh3SRT99wZlE" height="500px" frameborder="0"></iframe>
+            <button onclick="nextSection('module1')" type="button" class="btn btn-primary">Comenzar</button> 
+            
+            
+        </section>
+
+
+        <div id="module1" class="hidden">
+            <h2>Primeros pasos</h2>
+            <p>Lo ideal en esta primera instancia es preparar todo nuestro ecosistema para comenzar a trabajar, es por esta razon por la cual comenzaremos con abrir nuestra cuenta bancaria para </p>
+        
+        <div  class="video-grid" id="videoContainer"></div>
           </div>
-
-    <script>
+        </div>
+    <script  >
         const videos = [
             { url: "https://www.youtube.com/embed/g7Kyh34urVM?si=265Gztl4dLBa4a_s", descripcion: "Presentacion institucional" },
             { url: "https://www.youtube.com/embed/NU3LFb3dfeQ?si=xNo6IkygJzSLa7r7", descripcion: "Practica de Scratch" },
@@ -33,6 +50,14 @@
             `;
             videoContainer.appendChild(videoCard);
         });
+        function nextSection(id) {
+            document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+        
+        function finishOnboarding() {
+            alert("¡Onboarding completado!");
+        }
     </script>
 </body>
 </html>

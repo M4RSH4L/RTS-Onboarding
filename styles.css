@@ -32,3 +32,11 @@ iframe {
 p {
     color: #555;
 }
+
+.hidden {
+    display: none;
+}
+
+.videos{
+    height: 500px;
+}
